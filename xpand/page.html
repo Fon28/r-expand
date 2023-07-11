@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+/* body{
+    background-image: url("x_realty_adobe_express.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:100px ;
+    
+} */
+
+.hide5{
+    opacity:0 ;
+}
+
+.hide{
+    opacity: 0;
+}
+.one{
+    color: black; 
+    margin-top: -20rem;
+    position:fixed;    
+    transform: scale(0.1);
+}  
+
+
+
+.content{
+   color: white;
+   position: relative;
+   font-size: 2rem;
+   display:inline-block;
+   place-items: center;
+   height: 3000px;  
+   display: grid;
+   justify-content: center;
+
+}
+
+.content p{
+  margin: -10rem;
+  border: 1px solid yellow;
+}
+
+.grey{
+    color: grey;
+}
+
+p{
+    opacity: 0;
+}
+
+
+</style>
+   <img class="one" src="x_realty_adobe_express.svg" alt="image"> 
+    <div class="content">
+<p class="p1"> <span class="hide grey">e</span><span class="show">x</span><span class="hide">a</span><span class="hide">n</span><span class="hide">d</span></p>
+<p class="p2"><span class="grey">your</span><span> reality</span></p> 
+<p class="p3"><span class="grey">to the unknown</span>x</p> 
+<button class="btn">join us</button>
+</div>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<script>
+    //  var p1drop = p1.getBoundingClientRect().top;
+
+ 
+
+
+    gsap.registerPlugin(ScrollTrigger);
+    var tl = gsap.timeline()
+    tl.to('.one',{
+    scrollTrigger : {
+       trigger:".one",
+       toggleAction:"play none none",
+       start:"center center",
+       scrub:3,
+       duration:20,
+
+    },
+   scale:100
+})
+const timeline = gsap.timeline({defaults: {duration:1}})
+
+timeline
+    // .to('.body', {fontSize:'10rem',  duration:3})
+    .to('body', {backgroundColor:'black'})
+    .to('.show', {opacity:1}, '<')
+    .to('body', {color:'white'}, '<')
+
+
+    
+// window.addEventListener('scroll',()=>{
+//       var one = document.querySelector('.one');
+//  var p1 = document.querySelector('.p1')    
+//  var portheight = window.innerHeight;
+//  var p1drop = p1.getBoundingClientRect().top
+//  let body = document.querySelector('body')
+
+    
+//    var onefont = one.style.fontSize;
+//    if(p1drop <= portheight/2){
+    
+    //    const timeline = gsap.timeline({defaults: {duration:1}})
+
+    //    timeline
+            // .to('.body', {fontSize:'10rem',  duration:3})
+            // .to('body', {backgroundColor:'black'})
+            // .to('.show', {opacity:1}, '<')
+            // .to('body', {color:'white'}, '<')
+            
+      
+    //  console.log(portheight/2)
+    //  console.log( portheight/2-100)
+
+</script>
+
+</body> 
+</html>
+
+

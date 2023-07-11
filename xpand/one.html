@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .fade-in {
+  opacity:1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+    </style>
+    <p>the best</p>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="fade-in">
+        thidkjkjsh
+    </div>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+
+    <script>
+
+
+
+const element = document.querySelector('.fade-in');
+
+window.addEventListener('scroll', () => {
+  const elementPosition = element.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollCenter = scrollPos + (windowHeight / 2);
+  const distanceFromCenter = Math.abs(elementPosition - scrollCenter);
+  const opacity = 1 - (distanceFromCenter / windowHeight);
+
+  if (opacity <= 0) {
+    gsap.to(".fade-in", {opacity: opacity, duration: 0.5});
+  }
+});
+    </script>
+</body>
+</html>
